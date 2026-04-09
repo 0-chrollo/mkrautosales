@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<title>MKR Auto Sales</title>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="mkr-logo.png" alt="Logo">
+  </div>
+
+  <button class="menu-toggle" id="toggle" aria-label="Toggle menu">
+    <span>Menu</span>
+    <div class="bars">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#">Home</a>
+    <a href="#">Buy A vehicle <i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="#">Sell Your vehicle</a>
+
+  </div>
+</nav>
+
+
+<!-- Hero Ssection Of The Website -->
+<!-- Hero Ssection Of The Website -->
+<!-- Hero Ssection Of The Website -->
+<!-- Hero Ssection Of The Website -->
+<!-- Hero Ssection Of The Website -->
+
+
+
+
+
+<style>
+
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    overflow: hidden;
+    background: #111;
+  }
+
+  /* Background image — swap URL with your own image */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1600') center center / cover no-repeat;
+    filter: blur(5px) brightness(0.35);
+    transform: scale(1.08);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .hero-content p {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .btn {
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1.5px solid #fff;
+    border-radius: 1px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+    color: #e2e2e2;
+    animation: shake 2.5s ease-in-out infinite;
+  }
+
+  .btn-primary:hover { 
+    background: #ddd;
+    color:#052b4b;
+
+}
+
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+  }
+
+  .btn-secondary:hover { background: rgba(255,255,255,0.12); }
+
+  @keyframes shake {
+    0%, 88%, 100% { transform: translateX(0); }
+    90%  { transform: translateX(-4px); }
+    92%  { transform: translateX(4px); }
+    94%  { transform: translateX(-3px); }
+    96%  { transform: translateX(3px); }
+    98%  { transform: translateX(-1px); }
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 24px; }
+
+    .hero-buttons { flex-direction: column; }
+
+    .btn { width: 100%; text-align: center; }
+  }
+</style>
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Search MKR Auto</h1>
+    <p>We will help you find cars.</p>
+    <p>The best here.</p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary">Buy A Vehicle <i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="btn btn-secondary">Sell Your vehicle</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<script src="scripts.js"></script>
+</body>
+</html>
