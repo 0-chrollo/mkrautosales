@@ -44,6 +44,121 @@
 
 
 
+
+  <style>
+
+    /* ==============================
+       OVERLAP SECTION
+    ============================== */
+    .overlap-section {
+      position: relative;
+      height: 28vh;
+      overflow: hidden; /* keeps blur inside the section only */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Blurry background */
+    .overlap-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200') center/cover no-repeat;
+      filter: blur(5px);
+      transform: scale(1.08);
+    }
+
+    /* Dark overlay */
+    .overlap-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #031c318c;
+    }
+
+    .overlap-section h1 {
+        margin-bottom: 10vh;
+      position: relative;
+      z-index: 1;
+      color: #dbdbdb;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      font-family:'Times New Roman';
+      font-weight: 500;
+      
+    }
+
+
+    .middle {
+
+      margin: -110px 0;/* negative top = overlap amount */
+      position: relative;
+      
+  
+
+    }
+
+  </style>
+
+
+  <section class="overlap-section">
+    <h1>MKR Auto Sales Showroom</h1>
+    
+  </section>
+
+  <div class="middle">
+    <section class="search-engine">
+
+        <div class="search-section">
+            <div class="search-grid">
+                <div class="filter-group">
+                    <label>Make</label>
+                    <select><option>All Makes</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>Model</label>
+                    <select><option>All Models</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>Price from</label>
+                    <select><option>£5,000</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>Price to</label>
+                    <select><option>£30,000</option></select>
+                </div>
+            </div>
+        
+            <div id="extra-filters">
+                <div class="search-grid">
+                    <div class="filter-group">
+                        <label>Fuel Type</label>
+                        <select><option>Any</option></select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Transmission</label>
+                        <select><option>Any</option></select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="action-area">
+                <button class="more-filters-btn" onclick="toggleFilters()" id="toggleBtn">More filters</button>
+                <button class="search-btn">Search Vehicle <i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        </section>
+  </div>
+
+
+
+
+
+
+
+
+
     <style>
 
       .search-engine{
@@ -148,47 +263,7 @@
     </style>
 
 
-    <section class="search-engine">
-
-<div class="search-section">
-    <div class="search-grid">
-        <div class="filter-group">
-            <label>Make</label>
-            <select><option>All Makes</option></select>
-        </div>
-        <div class="filter-group">
-            <label>Model</label>
-            <select><option>All Models</option></select>
-        </div>
-        <div class="filter-group">
-            <label>Price from</label>
-            <select><option>£5,000</option></select>
-        </div>
-        <div class="filter-group">
-            <label>Price to</label>
-            <select><option>£30,000</option></select>
-        </div>
-    </div>
-
-    <div id="extra-filters">
-        <div class="search-grid">
-            <div class="filter-group">
-                <label>Fuel Type</label>
-                <select><option>Any</option></select>
-            </div>
-            <div class="filter-group">
-                <label>Transmission</label>
-                <select><option>Any</option></select>
-            </div>
-        </div>
-    </div>
-
-    <div class="action-area">
-        <button class="more-filters-btn" onclick="toggleFilters()" id="toggleBtn">More filters</button>
-        <button class="search-btn">Search Vehicle <i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-</div>
-</section>
+   
 
 <script>
     function toggleFilters() {
