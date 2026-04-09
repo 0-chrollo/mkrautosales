@@ -92,7 +92,7 @@
 
     .middle {
 
-      margin: -110px 0;/* negative top = overlap amount */
+      margin: -140px 0;/* negative top = overlap amount */
       position: relative;
       
   
@@ -103,7 +103,7 @@
 
 
   <section class="overlap-section">
-    <h1>MKR Auto Sales Showroom</h1>
+  
     
   </section>
 
@@ -285,6 +285,324 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+
+<style>
+
+    .engine-cards {
+
+      font-family: 'Barlow', sans-serif;
+      padding: 32px 24px;
+    }
+
+    /* --- Grid: 4 columns on desktop, 1 on mobile --- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .engine-cards {
+        padding: 20px 16px;
+      }
+    }
+
+    /* --- Card --- */
+    .vehicle-card {
+      background: #dedede ;
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- Image --- */
+    .card-image {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.92);
+    }
+
+    .price-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      padding: 5px 12px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    /* --- Body --- */
+    .card-body {
+      padding: 16px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .car-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color:#02162e;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      min-height: 56px;
+    }
+
+    .car-title span {
+      font-weight: 300;
+      color: #565656;
+    }
+
+    /* --- Specs --- */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: #2a2a2a;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .spec-item {
+      background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+      padding: 11px 10px;
+    }
+
+    .spec-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #cdcdcd;
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+
+    .spec-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: #eee;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .spec-value small {
+      font-size: 10px;
+      font-weight: 400;
+      color: #efefef;
+    }
+
+    /* --- Button --- */
+    .btn-view {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+      border-radius: 2px;
+      background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      margin-top: auto;
+    }
+
+    .btn-view:hover {
+      background: #c4000f;
+    }
+  </style>
+
+<section class="engine-cards">
+
+  <div class="card-grid">
+
+    <!-- Card 1 -->
+    <div class="vehicle-card">
+      <div class="card-image">
+        <img src="pige1.webp" alt="2012 Audi S3" />
+        <div class="price-badge">R269 000</div>
+      </div>
+      <div class="card-body">
+        <h2 class="car-title"><span>2012</span> Audi S3</h2>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-label">Mileage</div>
+            <div class="spec-value">141 000 <small>km</small></div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Fuel Type</div>
+            <div class="spec-value">Petrol</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Transmission</div>
+            <div class="spec-value">Manual <small>6-spd</small></div>
+          </div>
+        </div>
+        <a href="#" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="vehicle-card">
+      <div class="card-image">
+        <img src="your-car-image.jpg" alt="2019 Mercedes-Benz C200" />
+        <div class="price-badge">R489 000</div>
+      </div>
+      <div class="card-body">
+        <h2 class="car-title"><span>2019</span> Mercedes-Benz C200</h2>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-label">Mileage</div>
+            <div class="spec-value">62 000 <small>km</small></div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Fuel Type</div>
+            <div class="spec-value">Petrol</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Transmission</div>
+            <div class="spec-value">Auto <small>9-spd</small></div>
+          </div>
+        </div>
+        <a href="#" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="vehicle-card">
+      <div class="card-image">
+        <img src="your-car-image.jpg" alt="2021 Volkswagen Golf 8 GTI Clubsport" />
+        <div class="price-badge">R559 000</div>
+      </div>
+      <div class="card-body">
+        <h2 class="car-title"><span>2021</span> Volkswagen Golf 8 GTI Clubsport</h2>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-label">Mileage</div>
+            <div class="spec-value">28 500 <small>km</small></div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Fuel Type</div>
+            <div class="spec-value">Petrol</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Transmission</div>
+            <div class="spec-value">Auto <small>7-spd</small></div>
+          </div>
+        </div>
+        <a href="#" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="vehicle-card">
+      <div class="card-image">
+        <img src="your-car-image.jpg" alt="2017 BMW 3 Series 320d" />
+        <div class="price-badge">R349 000</div>
+      </div>
+      <div class="card-body">
+        <h2 class="car-title"><span>2017</span> BMW 3 Series 320d</h2>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-label">Mileage</div>
+            <div class="spec-value">98 000 <small>km</small></div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Fuel Type</div>
+            <div class="spec-value">Diesel</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Transmission</div>
+            <div class="spec-value">Auto <small>8-spd</small></div>
+          </div>
+        </div>
+        <a href="#" class="btn-view">View Details</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
 <script src="scripts.js"></script>
 
