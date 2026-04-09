@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<title>MKR Auto Sales</title>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="mkr-logo.png" alt="Logo">
+  </div>
+
+  <button class="menu-toggle" id="toggle" aria-label="Toggle menu">
+    <span>Menu</span>
+    <div class="bars">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="#">Buy A vehicle <i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="#">Sell Your vehicle</a>
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+      .search-engine{
+
+        padding:0.85rem;
+      }
+
+        .search-section {
+            
+            background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+            padding: 25px 15px;
+            border-radius: 0px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgb(215, 215, 215);
+        }
+
+        /* Fixed 2-column layout for all screen sizes */
+        .search-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .filter-group select {
+            padding: 10px 35px 10px 12px; /* Extra right padding for arrow */
+            border-radius: 1px;
+            border: none;
+            font-size: 0.95rem;
+            background-color: white;
+            height: 48px;
+            cursor: pointer;
+            appearance: none; /* Removes default browser arrow */
+            
+            /* Custom Arrow Settings */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            /* Change 'right 10px' to 'right 5px' to move it closer to center/label */
+            background-position: right 12px center; 
+            background-size: 14px;
+        }
+
+        /* More Filters Bordered Button */
+        .more-filters-btn {
+            display: inline-block;
+            margin: 15px auto 25px auto;
+            padding: 10px 28px;
+            border: 1.5px solid white;
+            border-radius: 25px;
+            color: white;
+            background: transparent;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+
+        .more-filters-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #extra-filters {
+            display: none; 
+            margin-bottom: 15px;
+        }
+
+        .action-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #0e5c50 0%, #06907b 100%);
+            color: #ffffff;
+            border: none;
+            padding: 16px 0;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-radius: 10rem;
+            cursor: pointer;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Desktop specific padding */
+        @media (min-width: 600px) {
+            .search-section { padding: 40px; }
+        }
+    </style>
+
+
+    <section class="search-engine">
+
+<div class="search-section">
+    <div class="search-grid">
+        <div class="filter-group">
+            <label>Make</label>
+            <select><option>All Makes</option></select>
+        </div>
+        <div class="filter-group">
+            <label>Model</label>
+            <select><option>All Models</option></select>
+        </div>
+        <div class="filter-group">
+            <label>Price from</label>
+            <select><option>£5,000</option></select>
+        </div>
+        <div class="filter-group">
+            <label>Price to</label>
+            <select><option>£30,000</option></select>
+        </div>
+    </div>
+
+    <div id="extra-filters">
+        <div class="search-grid">
+            <div class="filter-group">
+                <label>Fuel Type</label>
+                <select><option>Any</option></select>
+            </div>
+            <div class="filter-group">
+                <label>Transmission</label>
+                <select><option>Any</option></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-area">
+        <button class="more-filters-btn" onclick="toggleFilters()" id="toggleBtn">More filters</button>
+        <button class="search-btn">Search Vehicle <i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+</div>
+</section>
+
+<script>
+    function toggleFilters() {
+        var x = document.getElementById("extra-filters");
+        var btn = document.getElementById("toggleBtn");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            btn.innerHTML = "More filters";
+        } else {
+            x.style.display = "block";
+            btn.innerHTML = "Less filters";
+        }
+    }
+</script>
+
+
+
+
+
+
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

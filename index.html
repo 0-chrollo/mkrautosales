@@ -24,7 +24,7 @@
   </button>
 
   <div class="nav-links" id="navLinks">
-    <a href="#">Home</a>
+    <a href="index.html">Home</a>
     <a href="#">Buy A vehicle <i class="fa-solid fa-magnifying-glass"></i></a>
     <a href="#">Sell Your vehicle</a>
 
@@ -42,115 +42,13 @@
 
 
 
-<style>
-
-  .hero {
-    position: relative;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 40px;
-    overflow: hidden;
-    background: #111;
-  }
-
-  /* Background image — swap URL with your own image */
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1600') center center / cover no-repeat;
-    filter: blur(5px) brightness(0.35);
-    transform: scale(1.08);
-    z-index: 0;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 640px;
-    width: 100%;
-    text-align: left;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    color:white;
-    line-height: 1.1;
-    margin-bottom: 20px;
-  }
-
-  .hero-content p {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-    margin-bottom: 8px;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    margin-top: 40px;
-  }
-
-  .btn {
-    padding: 14px 36px;
-    font-size: 1rem;
-    font-weight: 700;
-    border: 1.5px solid #fff;
-    border-radius: 1px;
-    cursor: pointer;
-    letter-spacing: 0.04em;
-    transition: background 0.25s, color 0.25s;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, #02162e 0%, #063358 100%);
-    color: #e2e2e2;
-    animation: shake 2.5s ease-in-out infinite;
-  }
-
-  .btn-primary:hover { 
-    background: #ddd;
-    color:#052b4b;
-
-}
-
-  .btn-secondary {
-    background: transparent;
-    color: #fff;
-  }
-
-  .btn-secondary:hover { background: rgba(255,255,255,0.12); }
-
-  @keyframes shake {
-    0%, 88%, 100% { transform: translateX(0); }
-    90%  { transform: translateX(-4px); }
-    92%  { transform: translateX(4px); }
-    94%  { transform: translateX(-3px); }
-    96%  { transform: translateX(3px); }
-    98%  { transform: translateX(-1px); }
-  }
-
-  @media (max-width: 600px) {
-    .hero { padding: 60px 24px; }
-
-    .hero-buttons { flex-direction: column; }
-
-    .btn { width: 100%; text-align: center; }
-  }
-</style>
-
-
 <section class="hero">
   <div class="hero-content">
     <h1>Search MKR Auto</h1>
     <p>We will help you find cars.</p>
     <p>The best here.</p>
     <div class="hero-buttons">
-      <button class="btn btn-primary">Buy A Vehicle <i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="vehicles.html"><button class="btn btn-primary">Buy A Vehicle <i class="fa-solid fa-magnifying-glass"></i></button></a>
       <button class="btn btn-secondary">Sell Your vehicle</button>
     </div>
   </div>
@@ -160,62 +58,6 @@
 
 
 
-  <style>
-
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      padding: 0.5rem 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .feature-card {
-      background: #fff;
-
-      padding: 0.50rem;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 2px solid #185FA5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 4px;
-      flex-shrink: 0;
-    }
-
-    .feature-icon i {
-      font-size: 18px;
-      color: #185FA5;
-    }
-
-    .feature-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: #111;
-      margin: 0;
-    }
-
-    .feature-desc {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.6;
-      margin: 0;
-    }
-  </style>
 
 
   <div class="features-grid">
