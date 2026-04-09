@@ -87,7 +87,7 @@
 
   .nav-links a {
     padding: 14px 32px;
-    color: #f3f3f3;
+    color:#02162e;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -113,5 +113,6 @@
 
     .nav-links a {
       padding: 0 18px;
+      color:#ffffff;
     }
   }
