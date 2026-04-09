@@ -160,6 +160,97 @@
 
 
 
+  <style>
+
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background: #fff;
+
+      padding: 0.50rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid #185FA5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .feature-icon i {
+      font-size: 18px;
+      color: #185FA5;
+    }
+
+    .feature-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #111;
+      margin: 0;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+
+
+  <div class="features-grid">
+
+    <!-- AA Warranties -->
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <p class="feature-title">AA Warranties</p>
+      <p class="feature-desc">Approved AA Authorised Dealer offering trusted warranty coverage on all vehicles.</p>
+    </div>
+
+    <!-- Vehicle Asset Finance -->
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+      </div>
+      <p class="feature-title">Vehicle asset finance</p>
+      <p class="feature-desc">Fully customisable finance options, best suited to each client's individual needs.</p>
+    </div>
+
+    <!-- Nationwide Delivery -->
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <p class="feature-title">Nationwide delivery</p>
+      <p class="feature-desc">Specialised, effective nationwide delivery — your vehicle brought straight to you.</p>
+    </div>
+
+  </div>
+
+
+
 
 
 
