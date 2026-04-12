@@ -261,6 +261,7 @@
 /* Vehicle Security and Warranty */
 /* Vehicle Security and Warranty */
   .features-grid {
+    background: linear-gradient(135deg, #02162e 0%, #063358 100%);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
@@ -274,7 +275,7 @@
   }
 
   .feature-card {
-    background: #fff;
+
 
     padding: 0.50rem;
     display: flex;
@@ -286,7 +287,7 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border: 2px solid #185FA5;
+    border: 2px solid #53a8fd;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -296,19 +297,196 @@
 
   .feature-icon i {
     font-size: 18px;
-    color: #185FA5;
+    color: #c7e1ff;
   }
 
   .feature-title {
     font-size: 15px;
     font-weight: 500;
-    color: #111;
+    color: #dfdfdf;
     margin: 0;
   }
 
   .feature-desc {
     font-size: 13px;
-    color: #666;
+    color: #d2d2d2;
     line-height: 1.6;
     margin: 0;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .engine-cards {
+
+    font-family: 'Barlow', sans-serif;
+    padding: 32px 24px;
+  }
+
+  /* --- Grid: 4 columns on desktop, 1 on mobile --- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .engine-cards {
+      padding: 20px 16px;
+    }
+  }
+
+  /* --- Card --- */
+  .vehicle-card {
+    background: #dedede ;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- Image --- */
+  .card-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.92);
+  }
+
+  .price-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    padding: 5px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  /* --- Body --- */
+  .card-body {
+    padding: 16px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .car-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color:#02162e;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    min-height: 56px;
+  }
+
+  .car-title span {
+    font-weight: 300;
+    color: #565656;
+  }
+
+  /* --- Specs --- */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #cecece;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .spec-item {
+    background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+    padding: 11px 10px;
+  }
+
+  .spec-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #cdcdcd;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  .spec-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: #eee;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .spec-value small {
+    font-size: 10px;
+    font-weight: 400;
+    color: #efefef;
+  }
+
+  /* --- Button --- */
+  .btn-view {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+  }
+
+  .btn-view:hover {
+    background: #c4000f;
+  } 

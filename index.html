@@ -96,6 +96,423 @@
 
 
 
+
+
+
+
+
+<style>
+
+
+        .just-in {
+          
+          font-family: 'DM Sans', sans-serif;
+          padding: 60px 0 80px;
+          min-height: 5vh;
+        }
+      
+        /* ── Section Header ── */
+        .section-header {
+          padding: 0 40px 36px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+        }
+      
+      
+      
+        .section-label {
+          display: inline-block;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: black;
+          margin-bottom: 10px;
+        }
+      
+        .section-title {
+          font-family: 'Syne', sans-serif;
+          font-size: clamp(28px, 5vw, 42px);
+          font-weight: 800;
+          color: black;
+          line-height: 1.1;
+        }
+      
+        .section-desc {
+          margin-top: 10px;
+          font-size: 15px;
+          color: black;
+          max-width: 400px;
+        }
+      
+        /* ── Arrow Buttons — desktop only ── */
+        .nav-arrows {
+          display: none;
+          gap: 10px;
+          flex-shrink: 0;
+          margin-bottom: 4px;
+        }
+      
+        @media (min-width: 768px) {
+          .nav-arrows { display: flex; }
+        }
+      
+        .nav-arrow {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          border: 3px solid #063358;
+          background: transparent;
+          color: #11a28f;
+          font-size: 18px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s, color 0.2s, opacity 0.2s;
+          line-height: 1;
+        }
+      
+        .nav-arrow:hover {
+          background:#11a28f;
+          color: #fff;
+        }
+      
+        .nav-arrow:disabled {
+          opacity: 0.25;
+          cursor: default;
+          pointer-events: none;
+        }
+      
+        /* ── Scroll Track ── */
+        .scroll-wrapper {
+          position: relative;
+        }
+      
+        .vehicles-track {
+          display: flex;
+          gap: 20px;
+          padding: 0 0 28px 0;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-padding-left: 15px;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+      
+        .track-spacer {
+          flex: 0 0 40px;
+          min-width: 40px;
+        }
+      
+        .vehicles-track::-webkit-scrollbar { display: none; }
+      
+        /* ── Vehicle Card ── */
+        .veh-card {
+          flex: 0 0 300px;
+          height: auto;
+          border-radius: 5px;
+          padding: 5px;
+          scroll-snap-align: start;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+      
+        /* Card colour variants */
+        .vehicle-card.blue   { background: none; }
+        .vehicle-card.dark   { background: var(--card-dark); }
+        .vehicle-card.accent { background: var(--card-accent); }
+      
+        /* Subtle radial glow */
+        .veh-card::before {
+          content: '';
+          position: absolute;
+          top: -60px; right: -60px;
+          width: 220px; height: 220px;
+          background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+          pointer-events: none;
+        }
+      
+        /* ── Card: Top row ── */
+ 
+      
+        /* ── Scroll Progress Bar ── */
+        .scroll-bar-wrap {
+          padding: 0 40px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+      
+        .scroll-bar-track {
+          flex: 1;
+          height: 10px;
+          background: rgb(179, 179, 179);
+          border-radius: 2px;
+          overflow: hidden;
+        }
+      
+        .scroll-bar-thumb {
+          height: 100%;
+          width: 30%;
+          background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+          border-radius: 2px;
+          transition: width 0.1s;
+        }
+      
+        .scroll-count {
+          font-size: 15px;
+          color: #0b534a ;
+          white-space: nowrap;
+          min-width: 40px;
+          text-align: right;
+        }
+
+      </style>
+
+
+
+
+  <section class="just-in">
+
+    <div class="section-header">
+      <div class="section-header-text">
+        <span class="section-label">Fresh Arrivals</span>
+        <h2 class="section-title">Just In <span style="color:#074e87;"> Vehicles </span></h2>
+        <p class="section-desc">Brand new stock added directly to our showroom floor, be the first to grab a deal. &#8594; &#8594;</p>
+      </div>
+    
+      <!-- Desktop-only arrows, top-right of the header -->
+      <div class="nav-arrows">
+        <button class="nav-arrow" id="arrowPrev" aria-label="Previous">&#8592;</button>
+        <button class="nav-arrow" id="arrowNext" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+    
+    <div class="scroll-wrapper">
+      <div class="vehicles-track" id="track">
+        <div class="track-spacer"></div>
+    
+        <!-- ═══════════════════════════════════════
+             VEHICLE CARDS
+             Add your own content inside each card.
+             Card colours: blue | dark | accent
+             Copy/paste a block to add more cards.
+        ════════════════════════════════════════ -->
+    
+        <div class="veh-card blue">
+    
+          <div class="vehicle-card">
+            <div class="card-image">
+              <img src="pige1.webp" alt="2012 Audi S3" />
+              <div class="price-badge">R269 000</div>
+            </div>
+            <div class="card-body">
+              <h2 class="car-title"><span>2012</span> Audi S3</h2>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <div class="spec-label">Mileage</div>
+                  <div class="spec-value">141 000 <small>km</small></div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Fuel Type</div>
+                  <div class="spec-value">Petrol</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Transmission</div>
+                  <div class="spec-value">Manual <small></small></div>
+                </div>
+              </div>
+              <a href="#" class="btn-view">View Details</a>
+            </div>
+          </div>
+      
+    
+    
+        </div>
+    
+        <div class="veh-card dark">
+    
+          <div class="vehicle-card">
+            <div class="card-image">
+              <img src="pige1.webp" alt="2012 Audi S3" />
+              <div class="price-badge">R269 000</div>
+            </div>
+            <div class="card-body">
+              <h2 class="car-title"><span>2012</span> Audi S3</h2>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <div class="spec-label">Mileage</div>
+                  <div class="spec-value">141 000 <small>km</small></div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Fuel Type</div>
+                  <div class="spec-value">Petrol</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Transmission</div>
+                  <div class="spec-value">Manual <small></small></div>
+                </div>
+              </div>
+              <a href="#" class="btn-view">View Details</a>
+            </div>
+          </div>
+    
+        </div>
+    
+    
+    
+        <div class="veh-card accent">
+    
+    
+    
+          <div class="vehicle-card">
+            <div class="card-image">
+              <img src="pige1.webp" alt="2012 Audi S3" />
+              <div class="price-badge">R269 000</div>
+            </div>
+            <div class="card-body">
+              <h2 class="car-title"><span>2012</span> Audi S3</h2>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <div class="spec-label">Mileage</div>
+                  <div class="spec-value">141 000 <small>km</small></div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Fuel Type</div>
+                  <div class="spec-value">Petrol</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Transmission</div>
+                  <div class="spec-value">Manual <small></small></div>
+                </div>
+              </div>
+              <a href="#" class="btn-view">View Details</a>
+            </div>
+          </div>
+    
+          
+        </div>
+    
+        <div class="veh-card blue">
+         
+    
+          <div class="vehicle-card">
+            <div class="card-image">
+              <img src="pige1.webp" alt="2012 Audi S3" />
+              <div class="price-badge">R269 000</div>
+            </div>
+            <div class="card-body">
+              <h2 class="car-title"><span>2012</span> Audi S3</h2>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <div class="spec-label">Mileage</div>
+                  <div class="spec-value">141 000 <small>km</small></div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Fuel Type</div>
+                  <div class="spec-value">Petrol</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">Transmission</div>
+                  <div class="spec-value">Manual <small></small></div>
+                </div>
+              </div>
+              <a href="#" class="btn-view">View Details</a>
+            </div>
+          </div>
+          
+    
+        </div>
+    
+    
+         <!--
+        <div class="vehicl5555555555555555555555 e-card blue">
+    
+     
+          my card content here 
+        </div>
+        -->
+    
+    
+    
+      </div><!-- /vehicles-track -->
+      
+      <div class="scroll-bar-wrap">
+        <div class="scroll-bar-track">
+          
+          <div class="scroll-bar-thumb" id="thumb"></div>
+        </div>
+        <span class="scroll-count" id="count">1 / 4</span>
+      </div>
+
+      
+      
+    </div>
+    
+
+
+   
+    
+    
+    </section>
+
+   
+
+
+
+<script>
+    const track     = document.getElementById('track');
+    const thumb     = document.getElementById('thumb');
+    const count     = document.getElementById('count');
+    const arrowPrev = document.getElementById('arrowPrev');
+    const arrowNext = document.getElementById('arrowNext');
+    const cards     = track.querySelectorAll('.vehicle-card');
+    const total     = cards.length;
+  
+    // Scroll exactly one card width + gap per click
+    function scrollByCard(direction) {
+      const cardWidth = cards[0].offsetWidth + 20;
+      track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+  
+    arrowPrev.addEventListener('click', () => scrollByCard(-1));
+    arrowNext.addEventListener('click', () => scrollByCard(1));
+  
+    function updateUI() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const pct = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+      thumb.style.width = Math.max(20, pct * 100) + '%';
+  
+      // Disable arrows at the ends
+      arrowPrev.disabled = track.scrollLeft <= 0;
+      arrowNext.disabled = track.scrollLeft >= maxScroll - 1;
+  
+      // Card counter
+      let closest = 0, minDist = Infinity;
+      cards.forEach((c, i) => {
+        const dist = Math.abs(c.getBoundingClientRect().left - track.getBoundingClientRect().left);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      count.textContent = (closest + 1) + ' / ' + total;
+    }
+  
+    track.addEventListener('scroll', updateUI);
+    updateUI(); // set initial state
+
+
+</script>
+
+
+
+
 <script src="scripts.js"></script>
 </body>
 </html>
