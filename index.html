@@ -513,6 +513,414 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+  .aa-vehicles-sec {
+    background: linear-gradient(135deg,#063358  0%, #02162e 100%);
+    padding: 72px 40px;
+    text-align: left;
+  }
+
+  .aa-vehicles-section h3 {
+    font-size: clamp(1.6rem, 3vw, 3rem);
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #d0d0d0;
+    margin-bottom: 10px;
+  }
+
+  .aa-vehicles-section h3 span {
+    color: #dcf2ff;
+  }
+
+  .aa-vehicles-section p {
+    color: #dadada;
+    font-size: 0.95rem;
+    max-width: 480px;
+    margin: 0 0 52px 0;
+    line-height: 1.6;
+  }
+
+  /* ── Grid — desktop: 5 columns, 180px cards, 24px gap ── */
+  .aa-vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 180px);
+    gap: 24px;
+    justify-content: center;
+  }
+
+  /* ── Image container ── */
+  .aa-car-card .aa-img-wr {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+
+  .aa-car-card:hover .aa-img-wr {
+    transform: translateY(-8px) scale(1.06);
+  }
+
+  /* Subtle shadow disc beneath the vehicle */
+  .aa-car-card .aa-img-wr::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 15px;
+    background: radial-gradient(ellipse, rgba(161,161,161,0.427) 0%, transparent 80%);
+    border-radius: 50%;
+    transition: opacity .35s;
+  }
+
+  .aa-car-card:hover .aa-img-wr::after {
+    opacity: .5;
+  }
+
+  /* ── Vehicle image — scoped class, won't affect other images ── */
+  .aa-vehicle-img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Tablet: 4 columns ── */
+  @media (max-width: 1100px) {
+    .aa-vehicle-grid {
+      grid-template-columns: repeat(4, 180px);
+    }
+  }
+
+  /* ── Small tablet: 3 columns, slightly smaller cards ── */
+  @media (max-width: 860px) {
+    .aa-vehicle-grid {
+      grid-template-columns: repeat(3, 160px);
+    }
+    .aa-car-card { width: 160px; }
+    .aa-car-card .aa-img-wr { width: 160px; height: 160px; }
+    .aa-vehicle-img { width: 125px; height: 125px; }
+  }
+
+  /* ── Mobile: 1 column, larger cards, full-width feel ── */
+@media (max-width: 600px) {
+  .aa-vehicles-sec { padding: 52px 20px; }
+
+  .aa-vehicle-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+    justify-items: center; /* ← centers each card in the column */
+  }
+
+  .aa-car-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ← centers img-wr and label horizontally */
+    gap: 12px;
+    text-align: center; /* ← centers the label text */
+  }
+
+  .aa-car-card .aa-img-wr {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+
+  .aa-vehicle-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .aa-vehicle-label {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    padding: 3px 10px;
+    font-weight: 600;
+  }
+}
+
+</style>
+
+
+<section class="aa-vehicles-sec aa-vehicles-section">
+  <h3>Vehicles <span>We Offer</span></h3>
+  <div class="section-rule"></div>
+
+  <p>
+    At Caydeys Auto, we offer a wide range of quality used vehicles including cars, bakkies and SUVs.
+    Each vehicle is carefully selected to ensure reliability, value and customer satisfaction.
+  </p>
+
+  <div class="aa-vehicle-grid">
+
+    <div class="aa-car-card">
+      <div class="aa-img-wr">
+        <img class="aa-vehicle-img" src="types/cars-db.png" alt="Car"/>
+      </div>
+      <span class="aa-vehicle-label">Cars</span>
+    </div>
+
+    <div class="aa-car-card">
+      <div class="aa-img-wr">
+        <img class="aa-vehicle-img" src="types/bakkies-db.png" alt="Bakkie"/>
+      </div>
+      <span class="aa-vehicle-label">Bakkies</span>
+    </div>
+
+    <div class="aa-car-card">
+      <div class="aa-img-wr">
+        <img class="aa-vehicle-img" src="types/Suvs.png" alt="SUV"/>
+      </div>
+      <span class="aa-vehicle-label">SUVs</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+
+
+
+    body {
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+
+    /* ─── Footer Wrapper ─────────────────────────────────────── */
+    .footer {
+      background: linear-gradient(135deg, #02162e 0%, #063358 100%);
+      color: #cdd3e0;
+      padding: 2.5rem 2rem 1.5rem;
+    }
+
+    /* ─── Top Section (Brand + Nav Columns) ─────────────────── */
+    .footer__top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Brand */
+    .footer__brand h2 {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .footer__brand p {
+      color: #8a95aa;
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 220px;
+      margin-bottom: 14px;
+    }
+
+    /* Social Icons */
+    .footer__social {
+      display: flex;
+      gap: 8px;
+    }
+
+    .footer__social-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .footer__social-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: #ffffff;
+    }
+
+    .footer__social-icon--facebook  { background-color: #3b5998; }
+    .footer__social-icon--twitter   { background-color: #1da1f2; }
+    .footer__social-icon--instagram { background-color: #c13584; }
+    .footer__social-icon--linkedin  { background-color: #0077b5; }
+
+    /* Nav Columns */
+    .footer__col h4 {
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .footer__col a {
+      display: block;
+      color: #8a95aa;
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 9px;
+      transition: color 0.2s;
+    }
+
+    .footer__col a:hover {
+      color: #ffffff;
+    }
+
+    /* ─── Bottom Bar ─────────────────────────────────────────── */
+    .footer__bottom {
+      border-top: 0.5px solid #2e3a55;
+      padding-top: 1.25rem;
+      text-align: center;
+    }
+
+    .footer__bottom-links {
+      margin-bottom: 6px;
+    }
+
+    .footer__bottom-links a {
+      color: #5a6478;
+      text-decoration: none;
+      font-size: 12px;
+      margin: 0 8px;
+      transition: color 0.2s;
+    }
+
+    .footer__bottom-links a:hover {
+      color: #8a95aa;
+    }
+
+    .footer__copyright {
+      color: #5a6478;
+      font-size: 12px;
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .footer__top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer__brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+  </style>
+
+  <footer class="footer">
+
+    <!-- Top: Brand + Nav Columns -->
+    <div class="footer__top">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <h2>AutoDrive</h2>
+        <p>Your trusted destination for vehicles, accessories, and finance. We deliver nationwide.</p>
+        <div class="footer__social">
+          <div class="footer__social-icon footer__social-icon--facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </div>
+          <div class="footer__social-icon footer__social-icon--twitter">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </div>
+          <div class="footer__social-icon footer__social-icon--instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="#ffffff" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#ffffff" stroke-width="2"/></svg>
+          </div>
+          <div class="footer__social-icon footer__social-icon--linkedin">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicles -->
+      <div class="footer__col">
+        <h4>Vehicles</h4>
+        <a href="#">New Cars</a>
+        <a href="#">Used Cars</a>
+        <a href="#">Trucks &amp; SUVs</a>
+        <a href="#">View All Stock</a>
+      </div>
+
+      <!-- Finance -->
+      <div class="footer__col">
+        <h4>Finance</h4>
+        <a href="#">Apply Online</a>
+        <a href="#">Finance Options</a>
+        <a href="#">Trade-In Value</a>
+        <a href="#">FAQs</a>
+      </div>
+
+      <!-- Company -->
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Accessories Shop</a>
+        <a href="#">Nationwide Delivery</a>
+        <a href="#">Contact Us</a>
+      </div>
+
+    </div>
+    <!-- /footer__top -->
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <span class="footer__copyright">&copy; 2026 AutoDrive. All rights reserved.</span>
+    </div>
+    <!-- /footer__bottom -->
+
+  </footer>
+
+
+
 <script src="scripts.js"></script>
 </body>
 </html>
