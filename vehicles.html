@@ -465,7 +465,6 @@
 
 
 
-
 <style>
 
 
@@ -504,6 +503,7 @@
 
   /* Social Icons */
   .footer__social {
+    
     display: flex;
     gap: 8px;
   }
@@ -524,10 +524,19 @@
     fill: #ffffff;
   }
 
-  .footer__social-icon--facebook  { background-color: #3b5998; }
-  .footer__social-icon--twitter   { background-color: #1da1f2; }
-  .footer__social-icon--instagram { background-color: #c13584; }
-  .footer__social-icon--linkedin  { background-color: #0077b5; }
+  .footer__social-icon--facebook  {
+     background-color: #3b5998; 
+     text-decoration: none;
+     color: white;
+    }
+
+  .footer__social-icon--instagram { background-color: #c13584;
+    text-decoration: none;
+     color: white; }
+  .footer__social-icon--whatsapp  { background-color: #108f0a;
+  
+    text-decoration: none;
+     color: white; }
 
   /* Nav Columns */
   .footer__col h4 {
@@ -595,73 +604,72 @@
 
 <footer class="footer">
 
-  <!-- Top: Brand + Nav Columns -->
-  <div class="footer__top">
+<!-- Top: Brand + Nav Columns -->
+<div class="footer__top">
 
-    <!-- Brand -->
-    <div class="footer__brand">
-      <h2>AutoDrive</h2>
-      <p>Your trusted destination for vehicles, accessories, and finance. We deliver nationwide.</p>
-      <div class="footer__social">
-        <div class="footer__social-icon footer__social-icon--facebook">
-          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </div>
-        <div class="footer__social-icon footer__social-icon--twitter">
-          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-        </div>
-        <div class="footer__social-icon footer__social-icon--instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path fill="#ffffff" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#ffffff" stroke-width="2"/></svg>
-        </div>
-        <div class="footer__social-icon footer__social-icon--linkedin">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </div>
-      </div>
-    </div>
+  <!-- Brand -->
+  <div class="footer__brand">
+    <h2>MKR Auto Sales</h2>
+    <p>Your trusted destination for vehicles, accessories, and finance. We deliver nationwide.</p>
+    <div class="footer__social">
 
-    <!-- Vehicles -->
-    <div class="footer__col">
-      <h4>Vehicles</h4>
-      <a href="#">New Cars</a>
-      <a href="#">Used Cars</a>
-      <a href="#">Trucks &amp; SUVs</a>
-      <a href="#">View All Stock</a>
+      <a href="#" class="footer__social-icon footer__social-icon--facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    
+      <a href="#" class="footer__social-icon footer__social-icon--instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    
+      <a href="https://wa.me/27662912809" target="_blank" class="footer__social-icon footer__social-icon--whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    
     </div>
+  </div>
 
-    <!-- Finance -->
-    <div class="footer__col">
-      <h4>Finance</h4>
-      <a href="#">Apply Online</a>
-      <a href="#">Finance Options</a>
-      <a href="#">Trade-In Value</a>
-      <a href="#">FAQs</a>
-    </div>
+  <!-- Vehicles -->
+  <div class="footer__col">
+    <h4>Vehicles</h4>
+    <a href="#">Fresh Arrivals </a>
 
-    <!-- Company -->
-    <div class="footer__col">
-      <h4>Company</h4>
-      <a href="#">About Us</a>
-      <a href="#">Accessories Shop</a>
-      <a href="#">Nationwide Delivery</a>
-      <a href="#">Contact Us</a>
-    </div>
+    <a href="#">View All Stock</a>
+  </div>
+
+  <!-- Finance -->
+  <div class="footer__col">
+    <h4>Finance</h4>
+    <a href="#">Apply Online</a>
+    <a href="#">Finance Options</a>
+ 
+    <a href="#">FAQs</a>
+  </div>
+
+  <!-- Company -->
+  <div class="footer__col">
+    <h4>Company</h4>
+    <a href="#">About Us</a>
+
+    <a href="#">Nationwide Delivery</a>
+    <a href="#">Contact Us</a>
+  </div>
+
+</div>
+<!-- /footer__top -->
+
+<!-- Bottom Bar -->
+<div class="footer__bottom">
+  <div class="footer__bottom-links">
 
   </div>
-  <!-- /footer__top -->
-
-  <!-- Bottom Bar -->
-  <div class="footer__bottom">
-    <div class="footer__bottom-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Use</a>
-    </div>
-    <span class="footer__copyright">&copy; 2026 AutoDrive. All rights reserved.</span>
-  </div>
-  <!-- /footer__bottom -->
+  <span class="footer__copyright">&copy; 2026 MKR Auto Sales. All rights reserved.</span>
+</div>
+<!-- /footer__bottom -->
 
 </footer>
 
 
-<script src="scripts.js"></script>
 
+<script src="scripts.js"></script>
 </body>
 </html>
